@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Mosaic Maker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <h1>Diamond Mosaic Maker</h1>
+    <div style="position: relative; max-width: 300px; margin: 0 auto;">
+        <input type="text" id="flossInput" placeholder="Enter Tile Color Code (e.g., 151)">
+        <div id="suggestions"></div>
+    </div>
+    <div style="text-align: center; margin-top: 10px;">
+        <button onclick="addColor()"><i class="fas fa-plus"></i> Add Color</button>
+    </div>
+
+    <h2 style="text-align: center; color: #333;">Selectable Colors</h2>
+    <div id="selectableColorListContainer" class="highlighted-container">
+        <div id="noColorsMessage" class="no-colors-message">
+            <i class="fas fa-exclamation-circle"></i> Please add a color.
+        </div>
+        <div id="selectableColorList"></div>
+    </div>
+
+    <h2 style="text-align: center; color: #333;">Canvas Size</h2>
+    <div style="text-align: center; margin-bottom: 10px;">
+        <button onclick="resizeCanvas(600, 600)">600x600</button>
+        <button onclick="resizeCanvas(1200, 1200)">1200x1200</button>
+        <button onclick="resizeCanvas(1800, 1800)">1800x1800</button>
+    </div>
+    <canvas id="canvas" width="600" height="600"></canvas>
+    
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="saveAsPDF()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

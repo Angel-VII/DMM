@@ -1,0 +1,203 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#flossInput {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#selectableColorListContainer {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px dashed #007bff;
+    border-radius: 4px;
+    background-color: #e9f7ff;
+    text-align: center;
+}
+
+#selectableColorList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.no-colors-message {
+    display: none;
+    color: #d9534f;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 300px;
+}
+
+.color-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color-item:hover .color-code {
+    transform: scale(1.2);
+}
+
+.color-item.selected {
+    border: 2px solid #007bff;
+}
+
+.color-code {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.color-description {
+    flex-grow: 1;
+    font-size: 14px;
+    color: #555;
+}
+
+.count {
+    font-size: 14px;
+    color: #555;
+    margin-right: 10px;
+}
+
+.remove-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+    font-size: 18px;
+    color: #d9534f;
+}
+
+.remove-btn:hover {
+    color: #c9302c;
+}
+
+.remove-btn i {
+    font-size: 18px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 24px);
+    gap: 0; /* Eliminar separación entre cuadrículas */
+    margin-top: 20px;
+    width: 600px; /* Fijar anchura */
+    height: 600px; /* Fijar altura */
+}
+
+.grid-container {
+    display: inline-block;
+    padding: 0;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+.grid-item {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ccc; /* Mostrar borde de las cuadrículas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.grid-item div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Hacer el círculo llegar a los bordes */
+    border: 1px solid #ccc; /* Mostrar borde de los círculos */
+}
+
+#suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 300px;
+    z-index: 1000;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggestion:hover {
+    background-color: #e9ecef;
+}
+
+canvas {
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
